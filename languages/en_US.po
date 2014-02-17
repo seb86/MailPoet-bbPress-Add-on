@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MailPoet bbPress Addon\n"
+"POT-Creation-Date: 2014-02-04 20:52+0100\n"
+"PO-Revision-Date: 2014-02-04 20:53+0100\n"
+"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
+"Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: mailpoet-bbpress-addon.php:116
+msgid "Settings"
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:117
+msgid "Documentation"
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:165
+#, php-format
+msgid "Sorry, %s requires WordPress "
+msgstr ""
+
+#: includes/admin/class-mailpoet-bbpress-addon-admin-profile.php:39
+msgid "MailPoet"
+msgstr ""
+
+#: includes/admin/class-mailpoet-bbpress-addon-admin-profile.php:42
+msgid "Subscribe to MailPoet"
+msgstr ""
+
+#: includes/admin/class-mailpoet-bbpress-addon-admin-profile.php:43
+msgid ""
+"If checked, you are subscribed to the newsletters provided by this site."
+msgstr ""
+
+#: includes/admin/class-mailpoet-bbpress-addon-install.php:146
+msgid "What's new:"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:19
+msgid "MailPoet bbPress Add-on"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:30
+msgid "MailPoet Settings"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:53
+msgid "Enable MailPoet checkbox on Registration."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:70
+msgid "Enable MailPoet Registration"
+msgstr ""
