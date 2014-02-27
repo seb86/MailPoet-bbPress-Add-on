@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet bbPress Addon\n"
-"POT-Creation-Date: 2014-02-13 16:55+0100\n"
-"PO-Revision-Date: 2014-02-13 16:56+0100\n"
-"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
+"POT-Creation-Date: 2014-02-27 23:10+0100\n"
+"PO-Revision-Date: 2014-02-27 23:11+0100\n"
+"Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -41,12 +41,34 @@ msgstr ""
 msgid "MailPoet Integration"
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:56
-msgid "Enable MailPoet checkbox on Registration."
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:58
+msgid "Enable checkbox on Registration."
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:71
-msgid "Enable MailPoet Registration"
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:65
+msgid "Checkbox label text"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:72
+msgid "Pre-check the checkbox?"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:101
+msgid "Yes, please subscribe me to your newsletters."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:105
+msgid ""
+"HTML tags like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are "
+"allowed in the label text."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:120
+msgid "Yes"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:123
+msgid "No"
 msgstr ""
 
 #: includes/mailpoet-bbpress-addon-functions.php:19

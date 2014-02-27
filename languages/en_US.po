@@ -1,33 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet bbPress Addon\n"
-"POT-Creation-Date: 2014-02-04 20:52+0100\n"
-"PO-Revision-Date: 2014-02-04 20:53+0100\n"
-"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
+"POT-Creation-Date: 2014-02-27 23:10+0100\n"
+"PO-Revision-Date: 2014-02-28 00:35+0100\n"
+"Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: mailpoet-bbpress-addon.php:116
-msgid "Settings"
-msgstr ""
-
-#: mailpoet-bbpress-addon.php:117
-msgid "Documentation"
-msgstr ""
-
-#: mailpoet-bbpress-addon.php:165
-#, php-format
-msgid "Sorry, %s requires WordPress "
-msgstr ""
 
 #: includes/admin/class-mailpoet-bbpress-addon-admin-profile.php:39
 msgid "MailPoet"
@@ -42,7 +29,7 @@ msgid ""
 "If checked, you are subscribed to the newsletters provided by this site."
 msgstr ""
 
-#: includes/admin/class-mailpoet-bbpress-addon-install.php:146
+#: includes/admin/class-mailpoet-bbpress-addon-install.php:125
 msgid "What's new:"
 msgstr ""
 
@@ -50,14 +37,68 @@ msgstr ""
 msgid "MailPoet bbPress Add-on"
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:30
-msgid "MailPoet Settings"
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:33
+msgid "MailPoet Integration"
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:53
-msgid "Enable MailPoet checkbox on Registration."
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:58
+msgid "Enable checkbox on Registration."
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:70
-msgid "Enable MailPoet Registration"
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:65
+msgid "Checkbox label text"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:72
+msgid "Pre-check the checkbox?"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:101
+msgid "Yes, please subscribe me to your newsletters."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:105
+msgid ""
+"HTML tags like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are "
+"allowed in the label text."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:120
+msgid "Yes"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:123
+msgid "No"
+msgstr ""
+
+#: includes/mailpoet-bbpress-addon-functions.php:19
+msgid "Yes, please subscribe me to your newsletter."
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:134
+msgid "Settings"
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:155
+msgid "Documentation"
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:222
+#, php-format
+msgid "Sorry, <strong>%s</strong> requires WordPress "
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:233
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires bbPress for this plugin to work. Please "
+"install and activate <strong><a href=\"%s\">bbPress</a></strong> first."
+msgstr ""
+
+#: mailpoet-bbpress-addon.php:244
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires MailPoet Newsletters for this plugin to "
+"work. Please install and activate <strong><a href=\"%s\">MailPoet "
+"Newsletters</a></strong> first."
 msgstr ""

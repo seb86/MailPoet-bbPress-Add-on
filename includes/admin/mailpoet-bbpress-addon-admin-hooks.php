@@ -12,10 +12,12 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// Action
+add_action( 'admin_init', 'register_bbpress_mailpoet_settings' );
+
 // Filters
 add_filter( 'bbp_admin_get_settings_sections', 'mailpoet_bbpress_admin_add_setting_section' );
 add_filter( 'bbp_admin_get_settings_fields', 'mailpoet_bbpress_admin_settings' );
-//add_filter( 'bbp_slug_conflict_check', 'mailpoet_bbpress_conflict_check', 10, 2 );
 add_filter( 'bbp_map_settings_meta_caps', 'mailpoet_bbpress_admin_add_permissions', 10, 4 );
 
 ?>

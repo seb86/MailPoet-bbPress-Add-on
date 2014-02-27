@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: MailPoet bbPress Addon
+ * Plugin Name: MailPoet bbPress Add-on
  * Plugin URI: http://www.wordpress.org/plugins/mailpoet-bbpress-addon/
  * Description: Enables your new forum members to subscribe to a newsletter while registering on the forum. Requires the use of [bbp-register] shortcode.
  * Version: 1.0.0
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'MailPoet_bbPress_Addon' ) ) {
 
 /**
- * Main MailPoet bbPress Addon Class
+ * Main MailPoet bbPress Add-on Class
  *
  * @class MailPoet_bbPress_Addon
  * @version 1.0.0
@@ -46,7 +46,7 @@ final class MailPoet_bbPress_Addon {
 	 *
 	 * @var string
 	 */
-	public $name = "MailPoet bbPress Addon";
+	public $name = "MailPoet bbPress Add-on";
 
 	/**
 	 * The Plug-in version.
@@ -56,7 +56,7 @@ final class MailPoet_bbPress_Addon {
 	public $version = "1.0.0";
 
 	/**
-	 * The WordPress version the plugin requires minumum.
+	 * The WordPress version the plugin requires minimum.
 	 *
 	 * @var string
 	 */
@@ -74,23 +74,23 @@ final class MailPoet_bbPress_Addon {
 	 *
 	 * @var string
 	 */
-	public $web_url = "http://www.wordpress.org/plugins/mailpoet-bbpress-addon/";
+	public $web_url = "http://www.wordpress.org/plugins/mailpoet-bbpress-add-on/";
 
 	/**
 	 * The Plug-in documentation URL.
 	 *
 	 * @var string
 	 */
-	public $doc_url = "http://docs.sebs-studio.com/extension/mailpoet/mailpoet-bbpress-addon/";
+	public $doc_url = "http://docs.sebs-studio.com/extension/mailpoet/mailpoet-bbpress-add-on/";
 
 	/**
-	 * Main MailPoet bbPress Addon Instance
+	 * Main MailPoet bbPress Add-on Instance
 	 *
 	 * Ensures only one instance of  is loaded or can be loaded.
 	 *
 	 * @access public static
 	 * @see MailPoet_bbPress_Addon()
-	 * @return MailPoet bbPress Addon - Main instance
+	 * @return MailPoet bbPress Add-on - Main instance
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -171,7 +171,7 @@ final class MailPoet_bbPress_Addon {
 		define( 'MAILPOET_BBPRESS_ADDON_VERSION', $this->version );
 		define( 'MAILPOET_BBPRESS_ADDON_WP_VERSION_REQUIRE', $this->wp_version_min );
 
-		define( 'MAILPOET_BBPRESS_ADDON_README_FILE', 'http://plugins.svn.wordpress.org/mailpoet_bbpress_addon/trunk/readme.txt' );
+		define( 'MAILPOET_BBPRESS_ADDON_README_FILE', 'http://plugins.svn.wordpress.org/mailpoet-bbpress-add-on/trunk/readme.txt' );
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		define( 'MAILPOET_BBPRESS_ADDON_SCRIPT_MODE', $suffix );
@@ -219,7 +219,7 @@ final class MailPoet_bbPress_Addon {
 	 */
 	static function display_req_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . MAILPOET_PIWIK_ADDON_WP_VERSION_REQUIRE . ' or higher. Please <a href="%s">upgrade</a> your WordPress setup.', 'mailpoet_piwik_addon'), MAILPOET_PIWIK_ADDON, admin_url( 'update-core.php' ) );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . MAILPOET_BBPRESS_ADDON_WP_VERSION_REQUIRE . ' or higher. Please <a href="%s">upgrade</a> your WordPress setup.', 'mailpoet_piwik_addon'), MAILPOET_BBPRESS_ADDON, admin_url( 'update-core.php' ) );
 		echo '</p></div>';
 	}
 
@@ -331,14 +331,8 @@ final class MailPoet_bbPress_Addon {
 	public function load_plugin_textdomain() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'mailpoet_bbpress_addon' );
 
-		// Admin Locale
-		if ( is_admin() ) {
-			load_textdomain( 'mailpoet_bbpress_addon', WP_LANG_DIR . "/mailpoet_bbpress_addon/mailpoet_bbpress_addon-admin-$locale.mo" );
-			load_textdomain( 'mailpoet_bbpress_addon', $this->plugin_path() . "/languages/mailpoet_bbpress_addon-admin-$locale.mo" );
-		}
-
 		// Frontend Locale
-		load_textdomain( 'mailpoet_bbpress_addon', WP_LANG_DIR . "/mailpoet_bbpress_addon/mailpoet_bbpress_addon-" . $locale . ".mo" );
+		load_textdomain( 'mailpoet_bbpress_addon', WP_LANG_DIR . "/mailpoet_bbpress_addon/mailpoet-bbpress-addon-" . $locale . ".mo" );
 
 		// Set Plugin Languages Directory
 		// Plugin translations can be filed in the mailpoet-bbpress-addon/languages/ directory
@@ -377,21 +371,8 @@ final class MailPoet_bbPress_Addon {
 	private function register_scripts_and_styles() {
 		global $wp_locale;
 
-		if ( is_admin() ) {
-			// Main Plugin Javascript
-			//$this->load_file( self::slug . '_admin_script', '/assets/js/admin/mailpoet-bbpress-addon' . MAILPOET_BBPRESS_ADDON_SCRIPT_MODE . '.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), MailPoet_bbPress_Addon()->version );
-			$this->load_file( self::slug . '_admin_script', '/assets/js/admin/mailpoet-bbpress-addon.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), MailPoet_bbPress_Addon()->version );
-
-			// Variables for JS scripts
-			wp_localize_script( self::slug . '_admin_script', 'mailpoet_bbpress_addon_admin_params', apply_filters( 'mailpoet_bbpress_addon_admin_params', array(
-				'plugin_url' => $this->plugin_url(),
-				)
-			) );
-
-			// Stylesheets
-			$this->load_file( self::slug . '_admin_style', '/assets/css/admin/mailpoet-bbpress-addon.css' );
-		}
-		else {
+		if ( !is_admin() ) {
+			// Scripts
 			$this->load_file( self::slug . '-script', '/assets/js/frontend/mailpoet-bbpress-addon' . MAILPOET_BBPRESS_ADDON_SCRIPT_MODE . '.js', true );
 
 			// Stylesheet
