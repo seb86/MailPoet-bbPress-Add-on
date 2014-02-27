@@ -14,9 +14,6 @@ if( !defined('WP_UNINSTALL_PLUGIN') ) exit();
 
 // For Single site
 if ( !is_multisite() ) {
-
-	// Your uninstall code goes here.
-	// List each option to delete here.
 	delete_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
 	delete_option( '_bbp_mailpoet_checkbox_label' );
 	delete_option( '_bbp_precheck_mailpoet_checkbox' );
@@ -31,8 +28,6 @@ else {
 	foreach ( $blog_ids as $blog_id ) {
 		switch_to_blog( $blog_id );
 
-		// Your uninstall code goes here.
-		// List each option to delete here.
 		delete_site_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
 		delete_site_option( '_bbp_mailpoet_checkbox_label' );
 		delete_site_option( '_bbp_precheck_mailpoet_checkbox' );
