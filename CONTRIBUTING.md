@@ -9,7 +9,7 @@ __note__ GitHub is for bug reports and contributions only - if you have a suppor
 ## Getting Started
 
 * Submit a ticket for your issue, assuming one does not already exist.
-  * https://github.com/seb86/MailPoet-bbPress-Add-On/issues
+  * https://github.com/seb86/MailPoet-bbPress-Add-on/issues
   * Clearly describe the issue including steps to reproduce when it is a bug.
   * Make sure you fill in the earliest version that you know has the issue.
 

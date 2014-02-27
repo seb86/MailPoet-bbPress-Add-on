@@ -33,7 +33,7 @@ For all documentation on this plugin go to: http://docs.sebs-studio.com/user-gui
 
 ## Contributing
 
-To contribute to the plugin, visit https://github.com/seb86/MailPoet-bbPress-Add-On/blob/master/CONTRIBUTING.md for details.
+To contribute to the plugin, visit https://github.com/seb86/MailPoet-bbPress-Add-on/blob/master/CONTRIBUTING.md for details.
 
 ## Installation
 
@@ -70,6 +70,6 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 ## Changelog
 
-__1.0.0 - 17/02/2014__
+__1.0.0 - 28/02/2014__
 
 * Working Progress Release.

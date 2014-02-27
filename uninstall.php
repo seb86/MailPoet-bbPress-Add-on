@@ -17,7 +17,9 @@ if ( !is_multisite() ) {
 
 	// Your uninstall code goes here.
 	// List each option to delete here.
-	delete_option( 'option_name' );
+	delete_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
+	delete_option( '_bbp_mailpoet_checkbox_label' );
+	delete_option( '_bbp_precheck_mailpoet_checkbox' );
 } 
 // For Multisite
 else {
@@ -31,7 +33,9 @@ else {
 
 		// Your uninstall code goes here.
 		// List each option to delete here.
-		delete_site_option( 'option_name' );
+		delete_site_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
+		delete_site_option( '_bbp_mailpoet_checkbox_label' );
+		delete_site_option( '_bbp_precheck_mailpoet_checkbox' );
 	}
 
 	switch_to_blog( $original_blog_id );
