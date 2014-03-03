@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet bbPress Addon\n"
-"POT-Creation-Date: 2014-02-27 23:10+0100\n"
-"PO-Revision-Date: 2014-02-28 00:35+0100\n"
+"POT-Creation-Date: 2014-03-04 00:12+0100\n"
+"PO-Revision-Date: 2014-03-04 00:13+0100\n"
 "Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
@@ -53,22 +53,38 @@ msgstr ""
 msgid "Pre-check the checkbox?"
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:101
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:79
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:158
+msgid "Lists"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:108
 msgid "Yes, please subscribe me to your newsletters."
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:105
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:112
 msgid ""
 "HTML tags like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are "
 "allowed in the label text."
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:120
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:127
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:123
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:130
 msgid "No"
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:149
+msgid ""
+"Here you can assign the customer to the lists you enable when they "
+"subscribe. Simply tick the lists you want your customers to subscribe to and "
+"press \"Save Changes\"."
+msgstr ""
+
+#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:157
+msgid "Enabled"
 msgstr ""
 
 #: includes/mailpoet-bbpress-addon-functions.php:19

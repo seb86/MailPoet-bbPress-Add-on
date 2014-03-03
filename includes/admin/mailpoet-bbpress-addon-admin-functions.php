@@ -75,6 +75,13 @@ function mailpoet_bbpress_admin_settings( $settings ) {
 			'args'              => array()
 		),
 
+		'_bbp_mailpoet_lists' => array(
+			'title' 			=> __( 'Lists', 'mailpoet_bbpress_addon' ),
+			'callback' 			=> 'mailpoet_bbpress_admin_setting_lists',
+			'sanitize_callback' => 'esc_sql',
+			'args'              => array()
+		),
+
 	);
 
 	return $settings;
@@ -136,11 +143,55 @@ function mailpoet_bbpress_admin_setting_checkbox_pre_checked() {
 <?php
 }
 
+// List all enabled lists to select.
+function mailpoet_bbpress_admin_setting_lists() {
+	?>
+	<p><?php _e( 'Here you can assign the customer to the lists you enable when they subscribe. Simply tick the lists you want your customers to subscribe to and press "Save Changes".', 'mailpoet_bbpress_add_on' ); ?></p>
+	<table class="widefat">
+		<thead>
+			<tr valign="top">
+				<td class="forminp" colspan="2">
+					<table class="mailpoet widefat" cellspacing="0">
+						<thead>
+							<tr>
+								<th width="1%"><?php _e('Enabled', 'mailpoet_bbpress_add_on'); ?></th>
+								<th><?php _e('Lists', 'mailpoet_bbpress_add_on'); ?></th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+						$checkout_lists = get_option('_bbp_mailpoet_lists');
+						foreach(mailpoet_lists() as $key => $list){
+							$list_id = $list['list_id'];
+							$checked = '';
+							if(isset($checkout_lists) && !empty($checkout_lists)){
+								if(in_array($list_id, $checkout_lists)){ $checked = ' checked="checked"'; }
+							}
+							echo '<tr>
+								<td width="1%" class="checkbox">
+									<input type="checkbox" name="_bbp_mailpoet_lists[]" value="'.esc_attr($list_id).'"'.$checked.' />
+								</td>
+								<td>
+									<p><strong>'.$list['name'].'</strong></p>
+								</td>
+							</tr>';
+						}
+						?>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<?php
+}
+
 /* Register bbPress fields for MailPoet. */
 function register_bbpress_mailpoet_settings() {
 	register_setting( 'bbpress', '_bbp_enable_mailpoet_checkbox_on_registration' );
 	register_setting( 'bbpress', '_bbp_mailpoet_checkbox_label' );
 	register_setting( 'bbpress', '_bbp_precheck_mailpoet_checkbox' );
+	register_setting( 'bbpress', '_bbp_mailpoet_lists' );
 } 
 
 /**

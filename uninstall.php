@@ -17,6 +17,7 @@ if ( !is_multisite() ) {
 	delete_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
 	delete_option( '_bbp_mailpoet_checkbox_label' );
 	delete_option( '_bbp_precheck_mailpoet_checkbox' );
+	delete_option( '_bbp_mailpoet_lists' );
 } 
 // For Multisite
 else {
@@ -31,6 +32,7 @@ else {
 		delete_site_option( '_bbp_enable_mailpoet_checkbox_on_registration' );
 		delete_site_option( '_bbp_mailpoet_checkbox_label' );
 		delete_site_option( '_bbp_precheck_mailpoet_checkbox' );
+		delete_site_option( '_bbp_mailpoet_lists' );
 	}
 
 	switch_to_blog( $original_blog_id );
