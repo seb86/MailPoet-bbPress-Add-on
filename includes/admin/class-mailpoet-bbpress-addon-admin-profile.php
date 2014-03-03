@@ -29,16 +29,16 @@ if ( ! class_exists( 'MailPoet_bbPress_Addon_Admin_Profile' ) ) {
 		}
 
 		/**
-		 * Get Address Fields for the edit user pages.
+		 * Get MailPoet Fields for the edit user pages.
 		 *
 		 * @return array Fields to display which are filtered through mailpoet_bbpress_addon_user_meta_fields before being returned
 		 */
 		public function get_user_meta_fields() {
 			$show_fields = apply_filters('mailpoet_bbpress_addon_user_meta_fields', array(
-				'billing' => array(
+				'mailpoet' => array(
 					'title' => __( 'MailPoet', 'mailpoet_bbpress_addon' ),
 					'fields' => array(
-						'user_subscribe_to_mailpoet' => array(
+						'bbpress_user_subscribe_to_mailpoet' => array(
 								'label' 		=> __( 'Subscribe to MailPoet', 'mailpoet_bbpress_addon' ),
 								'description' 	=> __('If checked, you are subscribed to the newsletters provided by this site.', 'mailpoet_bbpress_addon'),
 								'type' 			=> 'checkbox'
@@ -69,11 +69,13 @@ if ( ! class_exists( 'MailPoet_bbPress_Addon_Admin_Profile' ) ) {
 				foreach( $fieldset['fields'] as $key => $field ) {
 					switch( $field['type'] ) {
 						case 'checkbox':
+
+						$checked_value = get_user_meta( $user->ID, $key, true );
 				?>
 				<tr>
 					<th><label for="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $field['label'] ); ?></label></th>
 					<td>
-						<input type="checkbox" name="<?php echo esc_attr( $key ); ?>" id="<?php echo esc_attr( $key ); ?>" value="yes"<?php $check_value = get_user_meta( $user->ID, $key, true ); if(isset($check_value) && $check_value != ''){ echo ' checked="checked"'; } ?> />
+						<input type="checkbox" name="<?php echo esc_attr( $key ); ?>" id="<?php echo esc_attr( $key ); ?>" value="1" <?php checked('1', $checked_value); ?> />
 						<span class="description"><?php echo wp_kses_post( $field['description'] ); ?></span>
 					</td>
 				</tr>
@@ -111,10 +113,43 @@ if ( ! class_exists( 'MailPoet_bbPress_Addon_Admin_Profile' ) ) {
 			foreach( $save_fields as $fieldset ) {
 				foreach( $fieldset['fields'] as $key => $field ) {
 					if ( isset( $_POST[ $key ] ) ) {
-						update_user_meta( $user_id, $key, mailpoet_bbpress_addon_clean( $_POST[ $key ] ) );
+						update_user_meta( $user_id, $key, mailpoet_bbpress_add_on_clean( $_POST[ $key ] ) );
+					}
+
+					// This saves single checkbox field values.
+					if ( $field['type'] == 'checkbox' ) {
+						update_user_meta( $user_id, $key, mailpoet_bbpress_add_on_clean( $_POST[ $key ] ) );
+					}
+
+					// This subscribes the user to each MailPoet lists selected under 'Settings -> Forum'
+					if ( isset( $_POST[ 'bbpress_user_subscribe_to_mailpoet' ] ) || !empty( $_POST[ 'bbpress_user_subscribe_to_mailpoet' ] ) ) {
+						$mailpoet_lists = get_option('mailpoet_bbpress_subscribe_too');
+						foreach( $mailpoet_lists as $list_id ) {
+							$this->mailpoet_subscribe_user( $list_id, $user_id );
+						}
+					}
+
+					// This unsubscribes the user from each MailPoet lists selected under 'Settings -> Forum'
+					if ( !isset( $_POST[ 'bbpress_user_subscribe_to_mailpoet' ] ) || empty( $_POST[ 'bbpress_user_subscribe_to_mailpoet' ] ) ) {
+						$mailpoet_lists = get_option('mailpoet_bbpress_subscribe_too');
+						foreach( $mailpoet_lists as $list_id ) {
+							$this->mailpoet_unsubscribe_user( $list_id, $user_id );
+						}
 					}
 				}
 			}
+		}
+
+		// This subscribes the user to all lists selected by the admin in this plugin settings.
+		public function mailpoet_subscribe_user( $list_ids = '', $userid ) {
+			$userHelper = &WYSIJA::get('user','helper');
+			$userHelper->subscribe( $userid, true, false, $list_ids );
+		}
+
+		// This unsubscribes the user to all lists selected by the admin in this plugin settings.
+		public function mailpoet_unsubscribe_user( $list_ids = '', $userid ) {
+			$userHelper = &WYSIJA::get('user','helper');
+			$userHelper->subscribe( $userid, false, false, $list_ids );
 		}
 
 	} // end class
