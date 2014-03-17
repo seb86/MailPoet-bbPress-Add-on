@@ -280,10 +280,6 @@ final class MailPoet_bbPress_Addon {
 			$this->admin_includes();
 		}
 
-		if ( defined('DOING_AJAX') ) {
-			//$this->ajax_includes();
-		}
-
 		if ( ! is_admin() || defined('DOING_AJAX') ) {
 			$this->frontend_includes();
 		}
@@ -300,16 +296,6 @@ final class MailPoet_bbPress_Addon {
 		include_once( 'includes/admin/mailpoet-bbpress-addon-admin-hooks.php' ); // Hooks used in the admin
 		include_once( 'includes/admin/class-mailpoet-bbpress-addon-install.php' ); // Install plugin
 		include_once( 'includes/admin/class-mailpoet-bbpress-addon-admin.php' ); // Admin section
-	}
-
-	/**
-	 * Include required ajax files.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function ajax_includes() {
-		//include_once( 'includes/mailpoet-bbpress-addon-ajax.php' ); // Ajax functions for admin and the front-end
 	}
 
 	/**
@@ -388,19 +374,10 @@ final class MailPoet_bbPress_Addon {
 		global $wp_locale;
 
 		if ( !is_admin() ) {
-			// Scripts
-			//$this->load_file( self::slug . '-script', '/assets/js/frontend/mailpoet-bbpress-addon' . MAILPOET_BBPRESS_ADDON_SCRIPT_MODE . '.js', true );
-
 			// Stylesheet
 			$this->load_file( self::slug . '-style', '/assets/css/mailpoet-bbpress-addon.css' );
-
-			// Variables for JS scripts
-			/*wp_localize_script( self::slug . '-script', 'mailpoet_bbpress_addon_params', apply_filters( 'mailpoet_bbpress_addon_params', array(
-				'plugin_url' => $this->plugin_url(),
-				)
-			) );*/
-
 		} // end if !is_admin()
+
 	} // end register_scripts_and_styles
 
 	/**
