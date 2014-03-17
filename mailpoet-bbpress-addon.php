@@ -206,28 +206,32 @@ final class MailPoet_bbPress_Addon {
 	private function check_requirements() {
 		global $wp_version;
 
+		require_once(ABSPATH.'/wp-admin/includes/plugin.php');
+
 		if ( !version_compare( $wp_version, MAILPOET_BBPRESS_ADDON_WP_VERSION_REQUIRE, '>=' ) ) {
 			add_action('admin_notices', array( &$this, 'display_req_notice' ) );
 			return false;
 		}
 
-		if( !is_plugin_active( 'bbpress/bbpress.php' ) && !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
-			add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
-			add_action('admin_notices', array( &$this, 'display_req_notice_bbpress' ) );
-			return false;
-		}
+		if( function_exists( 'is_plugin_active' ) ) {
+			if( !is_plugin_active( 'bbpress/bbpress.php' ) && !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
+				add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
+				add_action('admin_notices', array( &$this, 'display_req_notice_bbpress' ) );
+				return false;
+			}
 
-		if( !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
-			add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
-			return false;
-		}
+			if( !is_plugin_active( 'wysija-newsletters/index.php' ) ) {
+				add_action('admin_notices', array( &$this, 'display_req_notice_mailpoet' ) );
+				return false;
+			}
 
-		if( !is_plugin_active( 'bbpress/bbpress.php' ) ) {
-			add_action('admin_notices', array( &$this, 'display_req_notice_bbpress' ) );
-			return false;
-		}
+			if( !is_plugin_active( 'bbpress/bbpress.php' ) ) {
+				add_action('admin_notices', array( &$this, 'display_req_notice_bbpress' ) );
+				return false;
+			}
 
-		return true;
+			return true;
+		}
 	}
 
 	/**
