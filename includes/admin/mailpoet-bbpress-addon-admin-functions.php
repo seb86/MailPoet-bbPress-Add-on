@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function mailpoet_bbpress_addon_get_screen_ids() {
 	$mailpoet_bbpress_addon_screen_id = strtolower( str_replace ( ' ', '-', __( 'MailPoet bbPress Add-on', 'mailpoet_bbpress_addon' ) ) );
 
-	return apply_filters( 'mailpoet_bbpress_addon_screen_ids', array(
+	return array(
 		'toplevel_page_' . $mailpoet_bbpress_addon_screen_id,
-	) );
+	);
 }
 
 /**

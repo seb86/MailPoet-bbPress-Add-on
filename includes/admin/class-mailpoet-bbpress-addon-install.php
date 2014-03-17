@@ -62,12 +62,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			$current_version = get_option( 'mailpoet_bbpress_addon_version', null );
 			$current_db_version = get_option( 'mailpoet_bbpress_addon_db_version', null );
 
-			if ( version_compare( $current_db_version, '1.0.1', '<' ) && null !== $current_db_version ) {
+			/*if ( version_compare( $current_db_version, '1.0.1', '<' ) && null !== $current_db_version ) {
 				update_option( '_mailpoet_bbpress_addon_needs_update', 1 );
 			}
 			else {
 				update_option( 'mailpoet_bbpress_addon_db_version', MailPoet_bbPress_Addon()->version );
-			}
+			}*/
 
 			// Update version
 			update_option( 'mailpoet_bbpress_addon_version', MailPoet_bbPress_Addon()->version );
@@ -81,10 +81,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			// Do updates
 			$current_db_version = get_option( 'mailpoet_bbpress_addon_db_version' );
 
-			if ( version_compare( $current_db_version, '1.0.1', '<' ) || MAILPOET_BBPRESS_ADDON_VERSION == '1.0.1' ) {
+			/*if ( version_compare( $current_db_version, '1.0.1', '<' ) || MAILPOET_BBPRESS_ADDON_VERSION == '1.0.1' ) {
 				include( 'updates/mailpoet-bbpress-addon-update-1.0.1.php' );
 				update_option( 'mailpoet_bbpress_addon_db_version', '1.0.1' );
-			}
+			}*/
 
 			update_option( 'mailpoet_bbpress_addon_db_version', MailPoet_bbPress_Addon()->version );
 		}

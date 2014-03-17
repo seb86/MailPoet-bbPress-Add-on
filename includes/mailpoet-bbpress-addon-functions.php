@@ -21,4 +21,28 @@ function subscribe_me_to_mailpoet_field() {
 <?php
 }
 
+/*
+ * Saves the additional field and subscribes the user if ticked.
+ */
+function save_user_register ($user_id) {
+	if ( isset( $_POST['user_subscribe_to_mailpoet'] ) || !empty( $_POST[ 'bbpress_user_subscribe_to_mailpoet' ] ) ) {
+		update_user_meta( $user_id, 'bbpress_user_subscribe_to_mailpoet', mailpoet_bbpress_add_on_clean($_POST['user_subscribe_to_mailpoet']) );
+
+		$mailpoet_lists = get_option('mailpoet_bbpress_subscribe_too');
+
+		$user_data = array(
+			'email' 	=> $_POST['user_email'],
+			'firstname' => $_POST['user_login'],
+			'lastname' 	=> ''
+		);
+
+		$data_subscriber = array(
+			'user' 		=> $user_data,
+			'user_list' => array('list_ids' => array($mailpoet_lists))
+		);
+
+		$userHelper = &WYSIJA::get('user','helper');
+		$userHelper->addSubscriber($data_subscriber);
+	}
+}
 ?>
