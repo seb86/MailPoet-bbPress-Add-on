@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailPoet bbPress Addon\n"
-"POT-Creation-Date: 2014-03-04 00:12+0100\n"
-"PO-Revision-Date: 2014-03-04 00:13+0100\n"
-"Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
+"POT-Creation-Date: 2014-03-28 16:37+0100\n"
+"PO-Revision-Date: 2014-03-28 16:37+0100\n"
+"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -31,10 +31,6 @@ msgstr ""
 
 #: includes/admin/class-mailpoet-bbpress-addon-install.php:125
 msgid "What's new:"
-msgstr ""
-
-#: includes/admin/mailpoet-bbpress-addon-admin-functions.php:19
-msgid "MailPoet bbPress Add-on"
 msgstr ""
 
 #: includes/admin/mailpoet-bbpress-addon-admin-functions.php:33
@@ -87,31 +83,31 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
-#: includes/mailpoet-bbpress-addon-functions.php:19
+#: includes/mailpoet-bbpress-addon-functions.php:20
 msgid "Yes, please subscribe me to your newsletter."
 msgstr ""
 
-#: mailpoet-bbpress-addon.php:134
+#: mailpoet-bbpress-addon.php:150
 msgid "Settings"
 msgstr ""
 
-#: mailpoet-bbpress-addon.php:155
+#: mailpoet-bbpress-addon.php:171
 msgid "Documentation"
 msgstr ""
 
-#: mailpoet-bbpress-addon.php:222
+#: mailpoet-bbpress-addon.php:244
 #, php-format
 msgid "Sorry, <strong>%s</strong> requires WordPress "
 msgstr ""
 
-#: mailpoet-bbpress-addon.php:233
+#: mailpoet-bbpress-addon.php:255
 #, php-format
 msgid ""
 "Sorry, <strong>%s</strong> requires bbPress for this plugin to work. Please "
 "install and activate <strong><a href=\"%s\">bbPress</a></strong> first."
 msgstr ""
 
-#: mailpoet-bbpress-addon.php:244
+#: mailpoet-bbpress-addon.php:266
 #, php-format
 msgid ""
 "Sorry, <strong>%s</strong> requires MailPoet Newsletters for this plugin to "
