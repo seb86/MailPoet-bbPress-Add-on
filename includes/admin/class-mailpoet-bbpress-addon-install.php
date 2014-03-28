@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 			add_action( 'admin_init', array( &$this, 'install_actions' ) );
 			add_action( 'admin_init', array( &$this, 'check_version' ), 5 );
-			add_action( 'in_plugin_update_message-'.plugin_basename( dirname( dirname( __FILE__ ) ) ), array( &$this, 'in_plugin_update_message' ) );
+			add_action( 'in_plugin_update_message-'.plugin_basename( MAILPOET_BBPRESS_ADDON_FILE ), array( &$this, 'in_plugin_update_message' ) );
 		}
 
 		/**
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		}
 
 		/**
-		 * Install Plugin Name
+		 * Install MailPoet bbPress Add-on
 		 */
 		public function install() {
 			// Queue upgrades
@@ -106,10 +106,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				if ( preg_match( $regexp, $response['body'], $matches ) ) {
 					$notices = (array) preg_split('~[\r\n]+~', trim( $matches[1] ) );
 
-					echo '<div style="font-weight: normal; background: #CD1049; color: #fff !important; border: 2px solid rgba(205,16,73,0.25); padding: 8px; margin: 6px 0;">';
+					echo '<div style="font-weight: normal; background: #CD1049; color: #fff !important; border: 1px solid rgba(205,16,73,0.25); padding: 8px; margin: 9px 0;">';
 
 					foreach ( $notices as $index => $line ) {
-						echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #b574a8;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
+						echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #6E1644;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
 					}
 
 					echo '</div>';

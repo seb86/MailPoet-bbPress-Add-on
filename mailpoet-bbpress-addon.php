@@ -83,14 +83,14 @@ final class MailPoet_bbPress_Addon {
 	 *
 	 * @var string
 	 */
-	public $web_url = "http://www.wordpress.org/plugins/mailpoet-bbpress-addon/";
+	public $web_url = "http://wordpress.org/plugins/mailpoet-bbpress-addon/";
 
 	/**
 	 * The Plug-in documentation URL.
 	 *
 	 * @var string
 	 */
-	public $doc_url = "http://docs.sebs-studio.com/extension/mailpoet/mailpoet-bbpress-addon/";
+	public $doc_url = "https://github.com/seb86/MailPoet-bbPress-Add-on/wiki/";
 
 	/**
 	 * GitHub Repo URL
